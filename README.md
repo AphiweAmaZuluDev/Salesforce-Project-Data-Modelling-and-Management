@@ -125,6 +125,25 @@ This section is intended for system administrators and developers.
 | :--- | :--- | :--- |
 | `Email_Cannot_Be_Blank` | `Email__c` | Prevents saving the record if the **Email** field is left blank. |
 
+## 4.5. Duplicate Management (Data Quality) 🛡️
+
+To maintain high data quality and prevent redundant outreach, the application includes custom duplicate management rules on the `CustomLead` object.
+
+### Matching Rule: NextGen Lead Match
+
+This rule defines how two `CustomLead` records are determined to be potential duplicates.
+
+| Matching Criteria | Explanation |
+| :--- | :--- |
+| **Formula** | $\text{(CustomLead: Name ExactMatchBlank = FALSE) AND ((CustomLead: Email ExactMatchBlank = TRUE) OR (CustomLead: Phone Fuzzy: PhoneMatchBlank = FALSE)}$ |
+| **Logic** | Records are considered a match if the **Name** is an exact match (and not blank), *AND* if either the **Email** is an exact match (and not blank), *OR* the **Phone** is a fuzzy match (and not blank). |
+
+### Duplicate Rule: Prevent Duplicate Leads
+
+| Rule Name | Action | Description |
+| :--- | :--- | :--- |
+| **Prevent Duplicate Leads** | **Alert** and **Report** | This rule utilizes the **NextGen Lead Match** criteria. It alerts users when creating or editing a record that potentially matches an existing lead and prevents the user from saving the duplicate record (based on the rule's settings). |
+
 #### CustomOpportunities Object
 
 | Rule Name | Field (API Name) | Functionality |
