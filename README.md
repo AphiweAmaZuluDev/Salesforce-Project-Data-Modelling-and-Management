@@ -121,12 +121,12 @@ This section is intended for system administrators and developers.
 
 #### CustomLeads Object
 
-| Rule Name | Field | Functionality |
+| Rule Name | Field (API Name) | Functionality |
 | :--- | :--- | :--- |
-| $\text{Email\_Cannot\_Be\_Blank}$ | $\text{Email\_\_c}$ | Prevents saving the record if the **Email** field is left blank. |
+| `Email_Cannot_Be_Blank` | `Email__c` | Prevents saving the record if the **Email** field is left blank. |
 
 #### CustomOpportunities Object
 
-| Rule Name | Field | Functionality |
+| Rule Name | Field (API Name) | Functionality |
 | :--- | :--- | :--- |
-| $\text{Closed\_Date\_Cannot\_Be\_a\_Future\_Date}$ | $\text{Closed\_Date\_\_c}$ | Prevents saving the record if the **Closed Date** field is set to a future date. |
+| `Closed_Date_Cannot_Be_a_Future_Date` | `Closed_Date__c` | Prevents saving the record if the **Closed Date** field is set to a future date. |
