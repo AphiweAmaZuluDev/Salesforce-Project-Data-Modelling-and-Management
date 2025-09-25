@@ -125,6 +125,12 @@ This section is intended for system administrators and developers.
 | :--- | :--- | :--- |
 | `Email_Cannot_Be_Blank` | `Email__c` | Prevents saving the record if the **Email** field is left blank. |
 
+#### CustomOpportunities Object
+
+| Rule Name | Field (API Name) | Functionality |
+| :--- | :--- | :--- |
+| `Closed_Date_Cannot_Be_a_Future_Date` | `Closed_Date__c` | Prevents saving the record if the **Closed Date** field is set to a future date. |
+
 ## 4.5. Duplicate Management (Data Quality) 🛡️
 
 To maintain high data quality and prevent redundant outreach, the application includes custom duplicate management rules on the `CustomLead` object.
@@ -143,9 +149,3 @@ This rule defines how two `CustomLead` records are determined to be potential du
 | Rule Name | Action | Description |
 | :--- | :--- | :--- |
 | **Prevent Duplicate Leads** | **Alert** and **Report** | This rule utilizes the **NextGen Lead Match** criteria. It alerts users when creating or editing a record that potentially matches an existing lead and prevents the user from saving the duplicate record (based on the rule's settings). |
-
-#### CustomOpportunities Object
-
-| Rule Name | Field (API Name) | Functionality |
-| :--- | :--- | :--- |
-| `Closed_Date_Cannot_Be_a_Future_Date` | `Closed_Date__c` | Prevents saving the record if the **Closed Date** field is set to a future date. |
